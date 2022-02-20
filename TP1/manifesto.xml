@@ -1,0 +1,20 @@
+<manifesto>
+	<title>Janelas: O Sistema Operativo</title>
+	<data>20/02/2022</data>
+	<autor>Bruno Pinto Jácome</autor>
+	<UC>Representação e Processamento de Conhecimento na Web</UC>
+	<resumo>
+		Este trabalho fala sobre o sistema operativo Windows (ou em portugues: Janelas)
+	</resumo>
+	<ficheiros>
+		<pasta nome="img">
+			<ficheiro>shocked.jpg</ficheiro>
+			<ficheiro>windows_10.jpg</ficheiro>
+			<ficheiro>windows_7.jpg</ficheiro>
+			<ficheiro>windows_95.jpg</ficheiro>
+			<ficheiro>windows_xp.jpg</ficheiro>
+		</pasta>
+		<ficheiro>index.html</ficheiro>
+		<ficheiro>styles.css</ficheiro>
+	</ficheiros>
+</manifesto>
