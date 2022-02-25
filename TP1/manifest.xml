@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC1: Janelas, o Sistema Operativo</titulo>
+        <data>2022-02-20</data>
+        <autor>
+            <id>PG47075</id>
+            <nome>Bruno Pinto Jácome</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>Este trabalho fala sobre o sistema operativo Windows (ou em portugues: Janelas).</p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>index.html</url>
+            <texto>Pagina Web</texto>
+        </resultado>
+        <resultado>
+            <url>styles.css</url>
+            <texto>Stylesheet do TPC</texto>
+        </resultado>
+    </resultados>
+</doc>

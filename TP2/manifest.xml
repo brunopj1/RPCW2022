@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC2: Site de Listagem de Filmes</titulo>
+        <data>2022-02-25</data>
+        <autor>
+            <id>PG47075</id>
+            <nome>Bruno Pinto Jácome</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>
+            Neste trabalho foi criado um site de partilha de informações sobre filmes.
+        </p>
+        <p>
+            O ficheiro “dataset-parser.py” é utilizado para criar uma série de ficheiros a utilizar pelo ‘fileserver.js’.
+            Este script python cria uma página html com a lista de filmes ordenados alfabeticamente, outra com a lista de atores também ordenada alfabeticamente, e por fim uma página html para cada filme e ator presentes no ficheiro “movies.json”.
+            Para alem disso, este script cria 2 ficheiros json (“actorLookupTable.json” e “movieLookupTable.json”) que associam cada índice de ator/filme (“a745” ou “f2706”, por exemplo) ao caminho para o respetivo ficheiro em disco.
+        </p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>fileserver.js</url>
+            <texto>Servidor javascript</texto>
+        </resultado>
+        <resultado>
+            <url>dataset-parser.py</url>
+            <texto>Script responsavel por processar o ficheiro json com os filmes</texto>
+        </resultado>
+        <resultado>
+            <url>actorLookupTable.json</url>
+            <texto>Ficheiro json que associa indices de ator ao caminho do ficheiro html em disco</texto>
+        </resultado>
+        <resultado>
+            <url>movieLookupTable.json</url>
+            <texto>Ficheiro json que associa indices de filme ao caminho do ficheiro html em disco</texto>
+        </resultado>
+        <resultado>
+            <url>orderedActors.html</url>
+            <texto>Ficheiro html com a lista ordenada de atores</texto>
+        </resultado>
+        <resultado>
+            <url>orderedMovies.html</url>
+            <texto>Ficheiro html com a lista ordenada de filmes</texto>
+        </resultado>
+        <resultado>
+            <url>Actors/</url>
+            <texto>Pasta com os ficheiros html de cada ator</texto>
+        </resultado>
+        <resultado>
+            <url>Movies/</url>
+            <texto>Pasta com os ficheiros html de cada filme</texto>
+        </resultado>
+    </resultados>
+</doc>
