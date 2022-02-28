@@ -1,6 +1,6 @@
 import json
 import re
-from unicodedata import lookup
+import os
 
 # region Templates HTML
 
@@ -127,6 +127,9 @@ def parseJSON(path):
 
 def createMoviePages(movieLookupTable, actorLookupTable, actorHash):
     
+    if not os.path.exists("./Movies/"):
+        os.makedirs('./Movies/')
+
     for normalizedTitle, movie in movieLookupTable.values():
         
         doc = templateMovie
@@ -157,6 +160,9 @@ def createMoviePages(movieLookupTable, actorLookupTable, actorHash):
 
 def createActorPages(movieLookupTable, actorLookupTable):
     
+    if not os.path.exists("./Actors/"):
+        os.makedirs('./Actors/')
+
     for normalizedName, name, movies in actorLookupTable.values():
         
         # Actor Name
