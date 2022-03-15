@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC3: Site de uma Escola de Musica</titulo>
+        <data>2022-03-15</data>
+        <autor>
+            <id>PG47075</id>
+            <nome>Bruno Pinto Jácome</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>
+            Neste trabalho foi criado um site de partilha de informações sobre uma escola de musica, desde cursos, a alunos e instrumentos
+        </p>
+        <p>
+            O ficheiro server.js cria u servidor que responde a pedidos http, criando as paginas html de resposta dinamicamente.
+        </p>
+        <p>
+            O servidor recebe os dados atraves de um json-server a correr na porta 3000.
+        </p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>server.js</url>
+            <texto>Servidor javascript</texto>
+        </resultado>
+    </resultados>
+</doc>
