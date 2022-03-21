@@ -1,0 +1,21 @@
+{
+  "name": "tp4",
+  "version": "1.0.0",
+  "description": "tp4",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Bruno Jácome",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "nodemon": "^2.0.15"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "db.json"
+    ]
+  }
+}

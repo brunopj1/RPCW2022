@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC4: Task List</titulo>
+        <data>2022-03-21</data>
+        <autor>
+            <id>PG47075</id>
+            <nome>Bruno Pinto Jácome</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>
+            Neste trabalho foi criado um site com as funcionalidades de uma lista de tarefas.
+        </p>
+        <p>
+            O site permite a criação de tarefas, a edição de tarefas já criadas, a remoção de tarefas e a sinalização de tarefas como "realizadas" ou "por realizar"
+        </p>
+        <p>
+            O ficheiro server.js é responsavel por criar o servidor http e por responder aos pedidos dos clientes, na porta 4000.
+        </p>
+        <p>
+            O servidor recebe os dados atraves de um json-server a correr na porta 3000.
+        </p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>server.js</url>
+            <texto>Servidor javascript</texto>
+        </resultado>
+        <resultado>
+            <url>resources/</url>
+            <texto>Pasta com todo o conteudo enviado aos utilizadores</texto>
+        </resultado>
+        <resultado>
+            <url>db.json</url>
+            <texto>Ficheiro json onde são guardadas as tasks</texto>
+        </resultado>
+    </resultados>
+</doc>

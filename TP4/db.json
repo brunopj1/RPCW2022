@@ -1,0 +1,64 @@
+{
+  "tarefas": [
+    {
+      "descricao": "Isto é uma tarefa realizada",
+      "responsavel": "Pessoa",
+      "tipo": "normal",
+      "dataCriacao": "2022-01-11",
+      "dataLimite": "2022-04-01",
+      "realizada": "true",
+      "eliminada": "false",
+      "id": 1
+    },
+    {
+      "descricao": "ola ola ola",
+      "responsavel": "123",
+      "tipo": "prioritaria",
+      "dataCriacao": "2022-3-20",
+      "dataLimite": "2022-03-10",
+      "realizada": "false",
+      "eliminada": "false",
+      "id": 2
+    },
+    {
+      "descricao": "teste",
+      "responsavel": "eu tu ele",
+      "tipo": "prioritaria",
+      "dataCriacao": "2022-3-21",
+      "dataLimite": "2022-03-01",
+      "realizada": "false",
+      "eliminada": "true",
+      "id": 3
+    },
+    {
+      "descricao": "teste2222",
+      "responsavel": "ola",
+      "tipo": "prioritaria",
+      "dataCriacao": "2022-3-21",
+      "dataLimite": "1111-01-01",
+      "realizada": "false",
+      "eliminada": "true",
+      "id": 4
+    },
+    {
+      "descricao": "novo teste mais fixeeeeeeee",
+      "responsavel": "pessoa fixe",
+      "tipo": "prioritaria",
+      "dataCriacao": "2022-3-21",
+      "dataLimite": "2022-03-31",
+      "realizada": "false",
+      "eliminada": "false",
+      "id": 5
+    },
+    {
+      "descricao": "mais um teste",
+      "responsavel": "pessoallll",
+      "tipo": "normal",
+      "dataCriacao": "2022-3-21",
+      "dataLimite": "2022-01-01",
+      "realizada": "false",
+      "eliminada": "false",
+      "id": 6
+    }
+  ]
+}
