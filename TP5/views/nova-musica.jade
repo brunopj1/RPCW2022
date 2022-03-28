@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  h1 Nova Musica
+  form(action="/musicas/inserir/submit",method="post")
+
+    label(for="titulo") Titulo
+    br
+    input(name="titulo",type="text", required="true")
+    br
+    br
+
+    label(for="prov") Provincia
+    br
+    input(name="prov",type="text", required="true")
+    br
+    br
+
+    label(for="local") Local
+    br
+    input(name="local",type="text", required="true")
+    br
+    br
+
+    label(for="musico") Musico
+    br
+    input(name="musico",type="text", required="true")
+    br
+    br
+
+    label(for="file") Localizacao do ficheiro
+    br
+    input(name="file",type="text", required="true")
+    br
+    br
+
+    label(for="tipo") Tipo
+    br
+    input(name="tipo",type="text", required="true")
+    br
+    br
+
+    label(for="duracao") Duracao
+    br
+    input(name="duracao",type="text", required="true")
+    br
+    br
+
+    input(type="submit", value="Guardar")

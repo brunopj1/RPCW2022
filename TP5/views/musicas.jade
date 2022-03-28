@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 Musicas
+  table
+    tr
+      th ID
+      th Titulo
+      th Provincia
+      th Local
+      th Cantor / Banda
+      th Duracao
+    each musica in musicas
+      tr
+        td= musica.id
+        td= musica.tit
+        td= musica.prov
+        td= musica.local
+        td= musica.musico
+        td= musica.duracao

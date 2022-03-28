@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC5: Express</titulo>
+        <data>2022-03-28</data>
+        <autor>
+            <id>PG47075</id>
+            <nome>Bruno Pinto Jácome</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>
+            Neste trabalho foi criado um site com uma listagem de musicas, onde é possivel inserir novas musicas.
+        </p>
+        <p>
+            O ficheiro add_ID.py é responsavel por inserir IDs nos elementos do ficheiro json.
+        </p>
+        <p>
+            O servidor recebe os dados atraves de um json-server a correr na porta 3000.
+        </p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>app.js</url>
+            <texto>Servidor javascript express</texto>
+        </resultado>
+        <resultado>
+            <url>add_ID.py</url>
+            <texto>Ficheiro que insere ID's nos elementos do ficheiro json</texto>
+        </resultado>
+        <resultado>
+            <url>db.json</url>
+            <texto>Ficheiro json onde são guardadas as musicas</texto>
+        </resultado>
+    </resultados>
+</doc>
