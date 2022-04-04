@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC6: Gestao de Ficheiros</titulo>
+        <data>2022-04-05</data>
+        <autor>
+            <id>PG47075</id>
+            <nome>Bruno Pinto Jácome</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>
+            Neste trabalho foi criado um site de gestao de ficheiros.
+        </p>
+        <p>
+            O site permite o upload e remoção de ficheiros.
+        </p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>app.js</url>
+            <texto>Servidor javascript</texto>
+        </resultado>
+        <resultado>
+            <url>uploads/</url>
+            <texto>Pasta para onde os ficheiros sao enviados temporariamente depois do upload.</texto>
+        </resultado>
+        <resultado>
+            <url>fileStorage/</url>
+            <texto>Pasta com todos os ficheiros registados na base de dados</texto>
+        </resultado>
+    </resultados>
+</doc>
