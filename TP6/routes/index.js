@@ -3,6 +3,7 @@ var router = express.Router();
 var multer = require('multer')
 var upload = multer({dest: 'uploads'})
 var fs = require("fs")
+var path = require('path');
 
 var Ficheiros = require('../controllers/ficheiro')
 
@@ -11,7 +12,6 @@ router.get('/', function(req, res, next) {
   // Get ficheiros
   Ficheiros.list()
     .then(data => {
-      console.log(data);
       res.render('index', { title: 'Ficheiros', ficheiros: data });
     })
     .catch(error => {
@@ -52,6 +52,11 @@ router.get('/eliminarFicheiro/:id', function(req, res, next) {
     .catch(error => {
       res.render('error', { error: error })
     })
+});
+
+router.get('/visualizar/:id', function(req, res, next) {
+  let filepath = __dirname + '/../fileStorage/' + req.params.id
+  res.sendFile(path.resolve(filepath));
 });
 
 module.exports = router;

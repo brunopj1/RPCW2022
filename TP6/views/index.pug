@@ -26,7 +26,8 @@ block content
       th Eliminar
     each f in ficheiros
       tr
-        td= f._id
+        td
+          a(href=`http://localhost:4000/visualizar/${f._id}`)= f._id
         td= f.descricao
         td= f.tipo
         td= f.tamanho
