@@ -1,0 +1,24 @@
+.home-button, .back-button {
+    position: absolute;
+    top: 5px;
+
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    
+    outline-style: solid;
+}
+
+.home-button {
+    right: 5px;
+}
+
+.back-button {
+    right: 75px;
+}
+
+.button-image {
+    height: 60px;
+    width: 60px;
+    object-fit: fill;
+}

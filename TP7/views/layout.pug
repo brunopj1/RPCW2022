@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/my_styles.css')
+  body
+    div(class="home-button")
+      a(href="/")
+        img(class="button-image" src="/images/home.png")
+    div(class="back-button")
+      a(href=back_ref)
+        img(class="button-image" src="/images/back.png")
+    block content

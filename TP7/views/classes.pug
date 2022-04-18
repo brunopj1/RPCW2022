@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Classes
+  table(class="w3-table-all")
+    tr
+      th Titulo
+      th Codigo
+    for c in classes
+      tr
+        td= c.titulo
+        td
+          a(href="/c"+c.codigo)= c.codigo
+    
+

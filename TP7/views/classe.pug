@@ -1,0 +1,64 @@
+extends layout
+
+block content
+  h1 Pagina da Classe #{classe.codigo}
+  br
+
+  h2 Titulo:
+  p= classe.titulo
+
+  h2 Descricao:
+  p= classe.descricao
+
+  h2 Nivel:
+  p= classe.nivel
+
+  if classe.temPai
+    h2 Pai:
+    table(class="w3-table-all")
+      tr
+        th Titulo
+        th Codigo
+      tr
+        td= classe.pai.titulo
+        td
+          a(href="/c"+classe.pai.codigo)= classe.pai.codigo
+
+  if classe.filhos.length > 0
+    h2 Filhos:
+    table(class="w3-table-all")
+      tr
+        th Titulo
+        th Codigo
+      for c in classe.filhos
+        tr
+          td= c.titulo
+          td
+            a(href="/c"+c.codigo)= c.codigo
+
+  if classe.notasAp.length > 0
+    h2 Notas Ap:
+    ul
+      for nota in classe.notasAp
+        li= nota.nota
+
+  
+  if classe.notasEx.length > 0
+    h2 Notas Ex:
+    ul
+      for nota in classe.notasEx
+        li= nota.nota
+  
+  if classe.nivel == 3 && classe.processosRelacionados.length > 0
+    h2 Processos Relacionados:
+    table(class="w3-table-all")
+      tr
+        th Titulo
+        th ID Rel
+        th Codigo
+      for p in classe.processosRelacionados
+        tr
+          td= p.titulo
+          td= p.idRel
+          td
+            a(href="/c"+p.codigo)= p.codigo

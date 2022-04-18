@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title Erro
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/my_styles.css')
+  body
+    h1= message
+    h2= error.status
+    pre #{error.stack}
