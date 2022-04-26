@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC8: Lista de Mensagens</titulo>
+        <data>2022-04-26</data>
+        <autor>
+            <id>PG47075</id>
+            <nome>Bruno Pinto Jácome</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>
+            Neste trabalho foi criado um site de listagem de mensagens.
+        </p>
+        <p>
+            Neste site é permitido adicionar, remover e editar mensagens.
+        </p>
+        <p>
+            Todo este processo é feito do lado do cliente.
+        </p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>index.html</url>
+            <texto>Pagina html</texto>
+        </resultado>
+        <resultado>
+            <url>style.css</url>
+            <texto>CSS do W3</texto>
+        </resultado>
+        <resultado>
+            <url>my-style.css</url>
+            <texto>CSS feito por mim</texto>
+        </resultado>
+        <resultado>
+            <url>jquery-3.5.1.min.js</url>
+            <texto>Javascript do jquery</texto>
+        </resultado>
+        <resultado>
+            <url>myscript.js</url>
+            <texto>Javascript feito por mim</texto>
+        </resultado>
+    </resultados>
+</doc>
