@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/musica.css')
+  script(src="https://unpkg.com/wavesurfer.js")
+
+  div.subMenu
+    a.subMenuBotao(href="/") Home 
+      i(class="fa-solid fa-house fa-sm")  
+    a.subMenuBotao(href="/musicas/") Musicas 
+      i(class="fa-solid fa-music fa-sm")  
+    a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+      i(class="fa-solid fa-arrow-left fa-sm")  
+
+  div.conteudo  
+
+    if musica.albumNome != undefined 
+      h3.titulo
+        a(class="botao-a" href="/albuns/"+musica.albumId)= musica.albumNome
+    else if !musica.oficial
+      h3.titulo
+        a(class="botao-a" href="/users/"+musica.artista)= musica.artista
+    else if musica.oficial
+      h3.titulo
+        a(class="botao-a" href="/artistas/"+musica.artistaId)= musica.artista
+
+    p#id-musica.hide= musica._id
+    div.hero
+      div.music 
+        img(src="/capa/"+musica._id alt="capa da musica")
+        div.info
+          h2= musica.nome
+          
+          div(id="waveform")
+            audio(controls autoplay)
+              source(src="/musicas/ouvir/"+musica._id)
+          div.controls
+            img(id="play-btn" src="/images/play.png")
+            img(id="stop-btn" src="/images/stop.png")
+            img(id="volume-btn" src="/images/volume.png")
+            button(id= musica._id class="botao-tab favorito botao-favorito") ❤
+
+    div.bloco
+      form(class="formulario" id="comentario-form")
+        input(type="text" name="comentario" id="comentario" placeholder="Comenta aqui..." required)
+        button(id="comentar" class="botao") Comentar
+      
+    div#comentarios
+      
+    div#snackbar
+
+  script(src='/javascripts/musica.js')

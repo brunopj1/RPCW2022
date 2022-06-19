@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    h1.titulo Transforme-se num artista
+
+    div.conteudo
+        form.formulario
+            span.item
+                label(for="nome") Nome de artista: 
+                input(type="text" name="nome" id="nome" placeholder="Escreva o seu nome..." required)
+            span.item
+                label(for="biografia") Bibliografia: 
+                input(type="text" name="biografia" id="biografia" placeholder="Escreva a sua biografia..." required)
+            span.item
+                label(for="redes") Adicionar redes sociais 
+                    span(id="redes")
+                    button(class="botao" id="mais-rede") 
+                        i(class="fa-solid fa-plus icon-maior")
+            span.item
+                label(for="mood") Adicionar moods: 
+                    span(id="moods")
+                    button(class="botao" id="mais-mood") 
+                        i(class="fa-solid fa-plus icon-maior")
+        span.item
+            form(id="foto")
+                label(for="foto") Selecione a foto:
+                input(id="foto_file" type="file" name="foto" placeholder="Selecione aqui o ficheiro..." required)
+        span.item    
+            button(id="enviar" class="botao") Enviar
+
+
+    script(src="/javascripts/criarArtista.js")
+

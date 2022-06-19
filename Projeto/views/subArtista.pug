@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1.titulo Submeta um Artista
+
+  div.subMenu
+    a.subMenuBotao(href="/") Home 
+      i(class="fa-solid fa-house fa-sm")  
+    a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+      i(class="fa-solid fa-arrow-left fa-sm")
+
+  div.conteudo
+    form(class="formulario" action="/submeter/artista" method="POST" enctype="multipart/form-data")
+      span.item
+        label(for="artista") Selecione o 
+          span.foco 
+            strong artist.nfo: 
+        input(type="file" name="artista" placeholder="Selecione aqui o ficheiro..." required)
+      span.item
+        label(for="foto") Selecione a 
+        span.foco 
+            strong foto: 
+        input(type="file" name="foto" placeholder="Selecione aqui o ficheiro..." required)
+      span.item
+        input(class="botao" id="enviar" type="submit" value="Enviar")

@@ -1,0 +1,18 @@
+extends layout_logged_out
+
+block content
+  body
+
+    h1.titulo Logout
+    
+    div.subMenu
+      a.subMenuBotao(href="/") Home 
+        i(class="fa-solid fa-house fa-sm")  
+      a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+        i(class="fa-solid fa-arrow-left fa-sm")  
+
+    div.conteudo
+      span.centra
+        button(id="logout" class="botao") Logout
+    
+    script(src="/javascripts/logout.js")

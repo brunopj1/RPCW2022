@@ -1,0 +1,23 @@
+extends layout_logged_out
+
+block content
+  body
+
+    h1.titulo Faça o login
+
+    div.conteudo
+      span.centra
+        form(id="formulario")
+          span.item
+            label(for="nome") Nome: 
+            input(id="nome" type='text' name='nome' placeholder='Escreva o username...')
+          span.item 
+            label(for="password") Password: 
+            input(id="password" type='password' name='password' placeholder='Escreva a password...')
+          button(id="login" class="botao") LogIn
+
+        br
+        a(href="/autenticar/registar" class="botao") Registar
+    
+    
+    script(src="/javascripts/login.js")

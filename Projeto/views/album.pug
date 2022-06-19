@@ -1,0 +1,53 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/album.css')
+
+  h1.titulo= album.nome
+
+  h4.titulo
+    a(class="botao-a" href="/artistas/"+album.idArtista)= album.artista
+
+  div.subMenu
+    a.subMenuBotao(href="/") Home 
+        i(class="fa-solid fa-house fa-sm")  
+    a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+        i(class="fa-solid fa-arrow-left fa-sm")  
+
+  div.conteudo
+    span.centra
+      p Lançado a #{album.dataLancamento} 
+      p= album.genero
+
+    h2.titulo Crítica
+    p.centra= album.critica
+
+    span.centra
+      img(src="/albuns/capa/"+album._id alt="capa do album")
+
+    if musicas.length > 0
+      hr.linhaPequena
+      h2.titulo Músicas
+      table#tabela
+        tr(class="cabecalho")
+          th(class="botao-a" onclick="sortTable(0)") Nome 
+          th(class="botao-a" onclick="sortTable(1,true)") Comentarios 
+          th(class="botao-a" onclick="sortTable(2,true)") Plays
+          th(class="botao-a" onclick="sortTable(3,true)") Favoritos 
+          th
+        each m in musicas 
+          tr(id=""+m._id)
+            td.foco
+              a(href='/musicas/'+m._id)= m.nome
+            td= m.comentarios.length
+            if m.plays == undefined
+              td 0
+            else 
+              td= m.plays
+            td= m.favoritos
+            if user.tipo == "admin" || m.user == user.nome 
+              td 
+                button(class="remover" class="botao-tab" id=""+m._id) ✖
+
+  script(src="/javascripts/album.js")
+

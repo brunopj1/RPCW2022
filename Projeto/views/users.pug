@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1.titulo Utilizadores
+
+  div.subMenu
+    a.subMenuBotao(href="/") Home 
+      i(class="fa-solid fa-house fa-sm")  
+    a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+      i(class="fa-solid fa-arrow-left fa-sm")
+
+  div.conteudo
+    ul(class="w3-ul w3-center")
+      each u in users
+        li(id=""+u.nome)
+          p
+            a(class="botao-a" href="/users/"+u.nome)= u.nome 
+          if user.tipo == "admin" && user.nome != u.nome && u.tipo != "admin"
+            button(class="remover" class="botao-tab" id=""+u.nome) ✖
+  
+  script(src="/javascripts/users.js")

@@ -1,0 +1,42 @@
+extends layout
+
+block content
+    h1.titulo #{playlist.nome}
+    h4.titulo 
+        a(class="botao-a" href="/users/"+playlist.autor)= playlist.autor
+        
+    div.subMenu
+        a.subMenuBotao(href="/") Home 
+            i(class="fa-solid fa-house fa-sm")  
+        a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+            i(class="fa-solid fa-arrow-left fa-sm")  
+    
+    div.conteudo
+        p#id-playlist.hide= playlist._id
+        
+        span.centra
+            p 
+                small Criada em #{playlist.data}
+
+        h3.titulo #{playlist.descricao}
+
+        hr.linhaPequena
+        h2.titulo Musicas 
+        ul(class="w3-ul w3-center")
+            each m in musicas
+                li 
+                    if m.nome == undefined
+                        p Esta música foi apagada...
+                    else 
+                        a(class="botao-a" href='/musicas/'+m.id)= m.nome
+        
+        div.bloco
+            form(id="comentario-form")
+                input(type="text" name="comentario" id="comentario" placeholder="Comenta aqui..." required)
+                button(id="comentar" class="botao") Comentar
+            
+        div(id="comentarios")
+
+    script(src="/javascripts/playlist.js")
+    
+    

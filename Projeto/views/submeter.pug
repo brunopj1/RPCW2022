@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1.titulo Submeta ao SoundSpot
+
+  div.subMenu
+    a.subMenuBotao(href="/") Home 
+      i(class="fa-solid fa-house fa-sm")  
+    a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+      i(class="fa-solid fa-arrow-left fa-sm")  
+
+  div.conteudo
+    if user.artista == undefined
+      p.bloco
+        a.botao-a(href="artistas/criarArtista") Cria o seu perfil de artista
+      hr.linhaPequena
+
+    
+    div.bloco
+      h3.titulo Submissão
+      ul 
+        li
+          p.item 
+            a(class="botao" href="/submeter/musica") Musica 
+        if user.tipo == "admin" || user.tipo == "produtor"
+          p Antes de submeter um <strong> album</strong>, garanta que ja submeteu o <strong>artista</strong> correspondente.
+          p.item 
+            a(class="botao" href="/submeter/artista") Artista
+          p.item 
+            a(class="botao" href="/submeter/album") Album

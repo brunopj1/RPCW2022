@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="icon" type="image/png" href="/images/favicon.png")
+    link(rel='stylesheet', href='/stylesheets/reset.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/new_style.css')
+
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css" integrity="sha512-Ef5r/bdKQ7JAmVBbTgivSgg3RM+SLRjwU0cAgySwTSv4+jYcVeDukMp+9lZGWT78T4vCUxgT3g+E8t7uabwRuw==" crossorigin="anonymous" referrerpolicy="no-referrer")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+  body
+
+    div.topbar
+      a.topbar-title(href="/") SoundSpot
+      form.topbar-pesquisa-form(action="/search" method="get")
+        input.topbar-pesquisa-input(name='search' placeholder="Pesquise algo...")
+        button.topbar-button Pesquisar
+      button.topbar-button(onclick="redirecionar(\"/users/" + user.nome + "\")") Perfil
+      button.topbar-button(onclick="redirecionar(\"/autenticar/logout\")") Logout
+    
+    hr.linha 
+
+    block content
+
+    div#snackbar
+
+
+    div.footer
+      footer
+        
+        p Copyright 2022  
+          <i class="fa-solid fa-copyright fa-lg"></i> - Todos os direitos reservados
+          
+
+    script(src="/javascripts/layout.js")
+    script(src="/javascripts/ordenador.js")

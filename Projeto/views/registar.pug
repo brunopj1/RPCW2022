@@ -1,0 +1,30 @@
+extends layout_logged_out
+
+block content
+  body
+
+    h1.titulo Faça o registo
+
+    div.conteudo
+      div.centra
+        form(id="formulario")
+          span.item
+            label(for="tipo") Tipo de registo: 
+            select(id="tipo" name="tipo")
+              option(class="opcao" id="" value="") --Selecione um opção--
+              option(class="opcao" id="admin" value="admin") Admin
+              option(class="opcao" id="consumidor" value="consumidor") Consumidor
+              option(class="opcao" id="produtor" value="produtor") Produtor
+          span.item
+            label(for="nome") Nome: 
+            input(id="nome" type='text' name='nome' placeholder='Escreva o username...')
+          span.item
+            label(for="password") Password: 
+            input(id="password" type='password' name='password' placeholder='Escreva a password...')
+          button(id="registar" class="botao") Registar
+
+        br
+        a(href="/autenticar/login" class="botao") Login
+
+    
+    script(src="/javascripts/registar.js")

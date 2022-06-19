@@ -1,0 +1,55 @@
+extends layout
+
+block content
+  h1.titulo Músicas
+  p(class="hide" id="tipo-user")= user.tipo
+  p(class="hide" id="nome-user")= user.nome
+
+  div.subMenu
+    a.subMenuBotao(href="/") Home 
+      i(class="fa-solid fa-house fa-sm")  
+    a.subMenuBotao(href="/playlists") Playlists 
+      i(class="fa-solid  fa-list fa-sm")
+    a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+      i(class="fa-solid fa-arrow-left fa-sm")  
+    
+  div.conteudo
+
+    div(id="criar-div" class="formulario-playlist")
+
+    span.barra
+      input(id="procurar" placeholder="Procure uma musica...")
+
+    hr.linhaPreta
+
+    table(id="tabela")
+      tr(class="cabecalho") 
+        th(class="botao-a" onclick="sortTable(0)") Nome
+        th(class="botao-a" onclick="sortTable(1)") Album
+        th(class="botao-a" onclick="sortTable(2)") Artista
+        th(class="botao-a" onclick="sortTable(3)") Duração
+        th(class="botao-a" onclick="sortTable(4,true)") Plays
+      each m in musicas
+        tr(id="row-"+m.musica._id class="tabela-linha row")
+          td.nome.foco
+            a(class="botao-a" href="/musicas/"+m.musica._id)= m.musica.nome
+          if m.album == undefined 
+            td Nao especificado  
+          else
+            td
+              a(class="botao-a" href="/albuns/"+m.album._id)= m.album.nome 
+          if m.artista == undefined
+            td
+              a(class="botao-a" href="/users/"+m.musica.artista)= m.musica.artista
+          else
+            td
+              a(class="botao-a" href="/artistas/"+m.artista._id)= m.artista.nome
+          td= m.musica.duracao
+          td= m.musica.plays
+          td
+            span(id='botao')
+              button(id= m.musica._id class="botao-tab favorito botao-favorito") ❤
+              button(id= m.musica._id class="botao-tab add botao-playlist") ✔
+              button(id= m.musica._id class="botao-tab rem botao-apagar "+m.musica.user) ✖
+        
+  script(src='/javascripts/musicas.js')

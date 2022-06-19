@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h1.titulo Playlists
+
+  div.subMenu
+    a.subMenuBotao(href="/") Home 
+      i(class="fa-solid fa-house fa-sm")  
+    a.subMenuBotao(href="/musicas/") Musicas 
+      i(class="fa-solid fa-music fa-sm")  
+    a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+      i(class="fa-solid fa-arrow-left fa-sm")  
+    
+  div.conteudo
+    table#tabela.tabela
+      tr(class="cabecalho") 
+        th(class="botao-a" onclick="sortTable(0)") Nome
+        th(class="botao-a" onclick="sortTable(1)") Autor
+        th(class="botao-a" onclick="sortTable(2,true)") Musicas
+        th(class="botao-a" onclick="sortTable(3)") Data
+        th
+        each p in playlists
+          tr(id=""+p._id class="tabela-linha")
+            td.foco
+              a(class="botao-a" href="/playlists/"+p._id)= p.nome
+            td 
+              a(class="botao-a" href="/users/"+p.autor)= p.autor
+            td= p.musicas
+            td= p.data
+            if  user.tipo == "admin" || p.autor == user.nome 
+              td 
+                button(class="botao-tab remover" id=""+p._id) ✖
+  
+  script(src="/javascripts/playlists.js")

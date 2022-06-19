@@ -1,0 +1,7 @@
+PROBLEMA - Nao estou a conseguir lidar com o facto das pessoas que sao apagadas pelo admin continuarem com um cookie valido 
+
+Caso de tempo: 
+-> Possibilidar de marcar playlists favoritas
+-> Possibilidar a criacao de albuns em users artistas
+-> impedir insersao de musicas que ja existem
+

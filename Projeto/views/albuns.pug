@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1.titulo Albuns
+
+  div.subMenu
+    a.subMenuBotao(href="/") Home 
+      i(class="fa-solid fa-house fa-sm")  
+    a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+      i(class="fa-solid fa-arrow-left fa-sm")  
+
+  div.conteudo
+    table#tabela
+      tr(class="cabecalho")
+        th(class="botao-a" onclick="sortTable(0)") Nome
+        th(class="botao-a" onclick="sortTable(1)") Artista
+        th(class="botao-a" onclick="sortTable(2)") Genero
+        th
+        each a in albuns
+          tr(id=""+a._id class="tabela-linha")
+            td.foco
+              a(class="botao-a" href="/albuns/"+a._id)= a.nome
+            td
+              a(class="botao-a" href="/artistas/"+a.idArtista)= a.artista
+            td= a.genero
+            if  user.tipo == "admin" || a.artista == user.nome ||  (a.user == user.nome)
+              td 
+                button(class="botao-tab remover" id=""+a._id) ✖
+
+  script(src="/javascripts/albuns.js")

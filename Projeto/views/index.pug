@@ -1,0 +1,51 @@
+extends layout
+
+block content
+  
+  h1.titulo Bem Vindo
+  
+  div.conteudo
+    if user.notificacoes.length > 0
+      div.mainpage-item(onclick="redirecionar(\"/users/notificacoes\")")
+        div
+          i(class="fa-solid fa-bell")
+        h2.titulo Notificações: #{user.notificacoes.length}
+    
+    div.row
+      div.column
+        div.mainpage-item(onclick="redirecionar(\"/musicas\")")
+          div
+            i(class="fa-solid fa-music")
+          h2.titulo Músicas
+
+        div.mainpage-item(onclick="redirecionar(\"/albuns\")")
+          div
+            i(class="fa-solid fa-compact-disc")
+          h2.titulo Albuns
+
+        div.mainpage-item(onclick="redirecionar(\"/artistas\")")
+          div
+            i(class="fa-solid fa-user")
+          h2.titulo Artistas
+
+      div.column
+        div.mainpage-item(onclick="redirecionar(\"/playlists\")")
+          div
+            i(class="fa-solid fa-list")
+          h2.titulo Playlists
+
+        div.mainpage-item(onclick="redirecionar(\"/submeter\")")
+          div
+            i(class="fa-solid fa-upload")
+          h2.titulo Submeter
+
+        div.mainpage-item(onclick="redirecionar(\"/users\")")
+          div
+            i(class="fa-solid fa-users")
+          h2.titulo Utilizadores
+
+    hr.linha
+
+    div#atividade
+
+    script(src="/javascripts/index.js")

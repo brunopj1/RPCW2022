@@ -1,0 +1,60 @@
+extends layout
+
+block content
+
+    if (musicas.length > 0 || artistas.length > 0 || albuns.length > 0 || users.length > 0)
+        
+        
+        span.barra
+            input(type="text" id="myInput" onkeyup="myFunction()" placeholder="Procure nos resultados...")
+
+        div.subMenu
+            a.subMenuBotao(href="/") Home 
+                i(class="fa-solid fa-house fa-sm")  
+            a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+                i(class="fa-solid fa-arrow-left fa-sm")
+
+        if musicas.length > 0
+            h1.titulo
+                a(class="botao-a" href="/musicas/") Musicas
+            
+            div.conteudo
+                ul#musicas(class="w3-ul w3-center")
+                    each m in musicas
+                        li
+                            a(class="botao-a" href="musicas/"+m._id)= m.nome
+
+        if artistas.length > 0
+            h1.titulo 
+                a(class="botao-a" href="/artistas/") Artistas 
+            
+            div.conteudo
+                ul#artistas(class="w3-ul w3-center")
+                    each a in artistas
+                        li
+                            a(class="botao-a" href="artistas/"+a._id)= a.nome
+        
+        if albuns.length > 0
+            h1.titulo 
+                 a(class="botao-a" href="/albuns/") Albuns 
+            
+            div.conteudo
+                ul#albuns(class="w3-ul w3-center")
+                    each a in albuns
+                        li
+                            a(class="botao-a" href="albuns/"+a._id)= a.nome
+
+        if users.length > 0
+            h1.titulo 
+                a(class="botao-a" href="/users/") Users 
+            
+            div.conteudo
+                ul#users(class="w3-ul w3-center")
+                    each u in users
+                        li
+                            a(class="botao-a" href="users/"+u.nome)= u.nome
+    else 
+        h2.titulo O que procura não existe...
+
+    script(src="/javascripts/resultados.js")
+            

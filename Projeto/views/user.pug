@@ -1,0 +1,79 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='/stylesheets/user.css')
+
+    h1.titulo#nome= perfil.nome
+    p.titulo #{perfil.tipo}
+
+    div.subMenu
+        a.subMenuBotao(href="/") Home 
+            i(class="fa-solid fa-house fa-sm")  
+        a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+            i(class="fa-solid fa-arrow-left fa-sm")
+
+    div.conteudo
+        if (perfil.artista != undefined) 
+            span.centra
+                a(class="botao-a" href="/artistas/"+perfil.artista) Perfil de artista
+        
+
+        span.centra
+            if perfil.foto
+                    img(src="/users/foto/"+perfil.nome alt="foto de perfil")
+                    br
+                    if  user.tipo == "admin" || user.nome == perfil.nome
+                        button(id="rem-foto" class="botao-tab") ✖
+            else if  user.nome == perfil.nome 
+                div#foto    
+                    button(id="add-foto" class="botao") Adicionar foto de perfil
+
+        if ultima != undefined 
+            hr.linhaPequena
+            h2.titulo Última música ouvida
+            span.centra
+                a(class="botao-a" href="/musicas/"+ultima._id)= ultima.nome
+
+
+        if favoritas.length > 0
+            hr.linhaPequena
+            h2.titulo Favoritas
+            
+            table
+                tr(class="cabecalho")
+                    th Nome
+                    th Data de adicao
+                    th 
+                each m in favoritas
+                    tr(id="favorita-"+m.id class="tabela-linha")
+                        td.foco
+                            a(class="botao-a" href="/musicas/"+m.id)= m.nome
+                        td= m.data
+                        if  user.tipo == "admin" || m.artista == user.nome || user.nome == perfil.nome
+                            td 
+                                button(id= m.id class="botao-tab remover-favorita") ✖
+                            
+
+        if playlists.length > 0
+            hr.linhaPequena
+            h2.titulo Playlists criadas
+            
+            table
+                tr(class="cabecalho")
+                    th Nome
+                    th Data de criacao
+                    th Total de musicas 
+                    th Total de plays
+                    th 
+                each p in playlists
+                    tr(id="playlist-"+p._id class="tabela-linha")
+                        td.foco
+                            a(class="botao-a" href="/playlists/"+p._id)= p.nome
+                        td= p.data
+                        td= p.musicas 
+                        td= p.plays
+                        if  user.tipo == "admin" || p.autor == user.nome 
+                            td 
+                                button(id= p.id class="botao-tab remover-playlist") ✖
+
+    script(src='/javascripts/user.js')

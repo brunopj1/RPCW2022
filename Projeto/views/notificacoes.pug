@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  if notificacoes.length > 0
+    h1.titulo Notificações  
+
+    div.subMenu
+      a.subMenuBotao(href="/") Home 
+        i(class="fa-solid fa-house fa-sm")  
+      a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+        i(class="fa-solid fa-arrow-left fa-sm")  
+      
+    span(class="hide" id="nome")= user
+
+    div.conteudo
+      ul(class="w3-ul w3-center")
+        each n in notificacoes
+          li(id=""+n._id)
+            p 
+              small #{n.data}  
+            p.foco 
+              a(href="/users/"+n.autor)= n.autor
+            p Comentou a sua: 
+              if n.fonte == "musica"
+                a(href="/musicas/"+n.idFonte)= n.fonte  
+              else if n.fonte == "playlist"
+                a(href="/playlists/"+n.idFonte)= n.fonte
+            button(class="remover" class="botao-tab" id=""+n._id) ✖
+  else
+    h1.titulo Nao tem notificações
+  
+  script(src="/javascripts/notificacoes.js")

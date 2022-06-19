@@ -1,0 +1,83 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/artista.css')
+  
+  h1.titulo= artista.nome
+
+  if (perfil != undefined && perfil.nome != undefined) 
+    h4.titulo
+      a(class="botao-a" href="/users/"+perfil.nome)= perfil.nome
+
+  div.subMenu
+    a.subMenuBotao(href="/") Home 
+        i(class="fa-solid fa-house fa-sm")  
+    a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+        i(class="fa-solid fa-arrow-left fa-sm")  
+
+  div.conteudo
+    if artista.biografia != ""
+      h2.titulo Bibliografia
+      p.centra= artista.biografia
+
+    span.centra
+      img(src="/foto/"+artista._id)
+
+    if artista.moods.length > 0
+      hr.linhaPequena
+      h2.titulo Moods
+      ul.moods
+        each m in artista.moods
+          li= m
+
+    if artista.redes.length > 0
+      hr.linhaPequena
+      h2.titulo Redes Sociais
+      ul.redes
+        each r in artista.redes 
+          li
+            a(href="https://"+r.link)
+              if r.tipo == "instagram"
+                i(class="fa-brands fa-2x fa-instagram")
+              else if r.tipo == "facebook"
+                i(class="fa-brands fa-2x fa-facebook")
+              else if r.tipo == "twitter"
+                i(class="fa-brands fa-2x fa-twitter")
+
+
+    if albuns.length > 0
+      hr.linhaPequena
+      h2.titulo Albuns 
+      table#tabela
+        tr(class="cabecalho") 
+          th(class="botao-a" onclick="sortTable(0)") Nome 
+          th(class="botao-a" onclick="sortTable(1,true)") Musicas 
+        each a in albuns
+          tr 
+            td.foco
+              a(class="botao-a" href='/albuns/'+a._id)= a.nome
+            td= a.totalMusicas
+            if user.tipo == "admin" || a.artista == user.nome 
+              td 
+                button(class="remover" class="botao-tab" id=""+a._id) ✖
+
+    if musicas != undefined && musicas.length > 0
+      hr.linhaPequena
+      h2.titulo Músicas
+      table#tabela
+        tr(class="cabecalho") 
+          th(class="botao-a" onclick="sortTable(0)") Nome 
+          th(class="botao-a" onclick="sortTable(1,true)") Plays 
+          th 
+        each m in musicas
+          tr(id=""+m._id) 
+            td.foco
+              a(class="botao-a" href='/musicas/'+m._id)= m.nome
+            td= m.plays
+            if user.tipo == "admin" || a.artista == user.nome 
+              td 
+                button(class="remover-musica" class="botao-tab" id=""+m._id) ✖
+
+
+  script(src="/javascripts/artista.js")
+

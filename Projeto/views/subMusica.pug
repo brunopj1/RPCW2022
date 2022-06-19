@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1.titulo Submeta Músicas
+
+  div.subMenu
+    a.subMenuBotao(href="/") Home 
+      i(class="fa-solid fa-house fa-sm")  
+    a.subMenuBotao(href="#" onclick="history.back()") Voltar 
+      i(class="fa-solid fa-arrow-left fa-sm")  
+
+  div.conteudo
+    form(class="formulario" action="/submeter/musica" method="POST" enctype="multipart/form-data")
+      span.item
+        label(for="musicas") Selecione as 
+          span.foco 
+            strong musicas: 
+        input(type="file" name="musicas" placeholder="Selecione aqui o ficheiro..." multiple)
+      span.item
+        label(for="capa") Selecione a
+          span.foco 
+              strong capa: 
+        input(type="file" name="capa" placeholder="Selecione aqui o ficheiro..." multiple)
+      span.item
+        input(class="botao" id="enviar" type="submit" value="Enviar")
