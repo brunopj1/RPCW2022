@@ -74,7 +74,7 @@ block content
             td.foco
               a(class="botao-a" href='/musicas/'+m._id)= m.nome
             td= m.plays
-            if user.tipo == "admin" || a.artista == user.nome 
+            if user.tipo == "admin" || (a != undefined && a.artista == user.nome) 
               td 
                 button(class="remover-musica" class="botao-tab" id=""+m._id) ✖
 

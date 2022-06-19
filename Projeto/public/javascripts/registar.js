@@ -37,7 +37,7 @@ $(function() {
         if ($("#tipo").val() == "admin" || $("#tipo").val() == "produtor") {
             var html = `
             <label id="passEspecial" for="passEspecial"> Password especial: 
-            <input id="passEspecial" type='password' name='passEspecial' placeholder='Escreva a pass especial...'>
+            <input id="passEspecial" type='password' name='passEspecial' placeholder='Escreva a pass especial (é 123)... '>
             `
             $("#formulario").prepend(html)
         }
